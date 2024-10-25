@@ -138,27 +138,6 @@ th {
   background-color: #005fa3; /* Darker shade on hover */
 }
 
-/* Gallery styles */
-#gallery {
-  display: flex; /* Flexbox layout */
-  flex-wrap: wrap; /* Wrap items to next line */
-  gap: 10px; /* Space between items */
-  justify-content: center; /* Center items */
-  padding: 1rem; /* Padding around the gallery */
-}
-
-#gallery img {
-  width: 80px; /* Fixed width for gallery images */
-  height: 80px; /* Fixed height for gallery images */
-  object-fit: cover; /* Cover the image without distortion */
-  border-radius: 8px; /* Rounded corners for images */
-  transition: transform 0.2s ease; /* Smooth scale transition on hover */
-}
-
-#gallery img:hover {
-  transform: scale(1.1); /* Scale image on hover */
-}
-
 /* Accessibility: prefers-reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -192,5 +171,5 @@ th {
 /* Show the skip link when focused */
 .skip:focus {
   top: 0; /* Move it back into view */
-  left: 40%; /* Center it horizontally */
+  left: 40%; /* move it to center horizontally */
 }
