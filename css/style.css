@@ -143,6 +143,9 @@ th {
   * {
     transition: none; /* Disable transitions for users who prefer reduced motion */
   }
+  .fab:hover {
+    background-color: var(--highlight-color); /* Keep the button color static */
+  }
 }
 
 /* Apply focus style */
