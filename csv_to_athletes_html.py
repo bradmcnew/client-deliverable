@@ -113,7 +113,7 @@ def gen_athlete_page(data, outfile):
 
                         <h2>Race Results</h2>
                         <details>
-                           <summary>Click to expand Race Results</summary></br></br>
+                           <summary>Click to expand Race Results</summary>
 
                         <section id="athlete-result-table">
 
@@ -152,6 +152,7 @@ def gen_athlete_page(data, outfile):
                         </details>
                      </section>
                      </main>
+                     </br></br>
                      <footer>
                      <p>
                      Skyline High School<br>
