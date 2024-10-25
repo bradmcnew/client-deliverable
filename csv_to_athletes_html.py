@@ -151,9 +151,6 @@ def gen_athlete_page(data, outfile):
                            </table>
                         </details>
                      </section>
-                     <section id = "gallery">
-                     <h2>Gallery</h2>
-                      </section>
                      </main>
                      <footer>
                      <p>
