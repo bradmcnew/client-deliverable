@@ -143,10 +143,6 @@ th {
   * {
     transition: none; /* Disable transitions for users who prefer reduced motion */
   }
-
-  #gallery img {
-    transition: none; /* Disable image transitions in gallery */
-  }
 }
 
 /* Apply focus style */
