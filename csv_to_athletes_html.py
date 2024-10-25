@@ -113,7 +113,7 @@ def gen_athlete_page(data, outfile):
 
                         <h2>Race Results</h2>
                         <details>
-                           <summary>Click to expand Race Results</summary>
+                           <summary>Click to expand Race Results</summary></br></br>
 
                         <section id="athlete-result-table">
 
