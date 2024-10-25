@@ -30,7 +30,7 @@ def csv_to_html(csv_filename, output_folder):
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{link_text}</title>
 <link rel="stylesheet" href="../css/reset.css">
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="./css/style.css">
 </head>
    <body>
    <a href = "#main">Skip to Main Content</a>
@@ -45,7 +45,7 @@ def csv_to_html(csv_filename, output_folder):
    </nav>
    <header>
       <!--Meet Info-->
-       
+
         <h1><a href="{link_url}">{link_text}</a></h1>
         <h2>{h2_text}</h2>
 </header>
@@ -94,8 +94,8 @@ def csv_to_html(csv_filename, output_folder):
                 # Add the athlete div
                 html_content += f"""
 <div class="athlete">
-<figure> 
-    <img src="../images/profiles/{profile_pic}" width="200" alt="Profile picture of {name}"> 
+<figure>
+    <img src="../images/profiles/{profile_pic}" width="200" alt="Profile picture of {name}">
     <figcaption>{name}</figcaption>
 </figure>
 <dl>
@@ -115,7 +115,7 @@ def csv_to_html(csv_filename, output_folder):
         # Close the HTML document
         html_content += """
    </section>
-   </main>   
+   </main>
    <footer>
                      <p>
                      Skyline High School<br>
@@ -124,7 +124,7 @@ def csv_to_html(csv_filename, output_folder):
                      Ann Arbor, MI 48103<br><br>
                     </address>
                      <a href = "https://sites.google.com/aaps.k12.mi.us/skylinecrosscountry2021/home">XC Skyline Page</a><br>
-                    Follow us on Instagram <a href = "https://www.instagram.com/a2skylinexc/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i>  </a> 
+                    Follow us on Instagram <a href = "https://www.instagram.com/a2skylinexc/" aria-label="Instagram"><i class="fa-brands fa-instagram"></i>  </a>
 
 
                      </footer>
@@ -147,10 +147,10 @@ def csv_to_html(csv_filename, output_folder):
 def process_meet_files():
     # Set the meets folder path
     meets_folder = os.path.join(os.getcwd(), "meets")
-    
+
     # Search for all CSV files in the meets folder
     csv_files = [f for f in os.listdir(meets_folder) if f.endswith('.csv')]
-    
+
     if not csv_files:
         print(f"No CSV files found in folder: {meets_folder}")
         return
@@ -185,12 +185,12 @@ def select_random_photos(folder_path, num_photos=25):
     all_files = os.listdir(folder_path)
     # Filter out non-image files if necessary (assuming .jpg, .png, etc.)
     image_files = [f for f in all_files if f.endswith(('.png', '.jpg', '.jpeg', '.gif'))]
-    
+
     # Ensure we have enough images to select
     if len(image_files) < num_photos:
         return ""
         raise ValueError(f"Not enough images in the folder. Found {len(image_files)} images.")
-    
+
     # Select 12 random images
     return random.sample(image_files, num_photos)
 
@@ -210,17 +210,17 @@ def create_meet_image_gallery(url):
     folder_path = f'images/meets/{meet_id}/'
 
     # print(f"The folder path is {folder_path}")
-    
+
     if not os.path.exists(folder_path):
         return ""
         raise FileNotFoundError(f"The folder {folder_path} does not exist.")
-    
+
     # Select 12 random photos
     selected_photos = select_random_photos(folder_path)
-    
+
     # Generate image tags
     html_image_tags = generate_image_tags(selected_photos, folder_path)
-    
+
     return html_image_tags
 
 # Example usage

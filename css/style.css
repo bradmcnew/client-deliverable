@@ -1,0 +1,196 @@
+/* Reset default margin and padding for all elements and set box-sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Smooth transitions for color changes */
+}
+
+/* Body styles */
+body {
+  max-width: 400px; /* Maximum width for the body */
+  margin: 0 auto; /* Center the body */
+  font-family: Arial, sans-serif; /* Set default font */
+  line-height: 1.6; /* Set line height for better readability */
+  background-color: var(--bg-color); /* Background color */
+  color: var(--text-color); /* Text color */
+}
+
+/* CSS Variables for colors */
+:root {
+  --bg-color: #f9f9f9; /* Light background color */
+  --text-color: #333; /* Dark text color */
+  --highlight-color: #00538f; /* Highlight color for links */
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #1a1a1a; /* Dark background color */
+    --text-color: #e0e0e0; /* Light text color */
+    --highlight-color: #4db5ff; /* Highlight color for links in dark mode */
+  }
+  nav summary {
+    color: #1a1a1a; /* Summary color in dark mode */
+  }
+  nav details a {
+    color: #00508a; /* Link color in details in dark mode */
+  }
+}
+
+/* Link styles */
+a {
+  color: var(--highlight-color); /* Link color */
+  text-decoration: none; /* Remove underline from links */
+}
+
+ul {
+  list-style-type: none; /* Remove default list style */
+}
+
+/* Main Header styles */
+header {
+  text-align: center; /* Center align header content */
+  padding: 1rem; /* Add padding */
+}
+
+header h1 {
+  font-size: 1.8rem; /* Font size for main title */
+  font-weight: bold; /* Bold title */
+  margin-bottom: 0.5rem; /* Space below the title */
+}
+
+/* Table header styles */
+thead th {
+  position: sticky; /* Keep header at the top on scroll */
+  top: 0; /* Position at the top */
+  background: var(--bg-color); /* Background color for the header */
+  padding: 0.75rem; /* Padding for header cells */
+  border-bottom: 2px solid #ddd; /* Border below header cells */
+}
+
+/* Profile Image styles */
+img {
+  border-radius: 50%; /* Make images circular */
+  object-fit: cover; /* Cover the image without distortion */
+  width: 100px; /* Fixed width */
+  height: 100px; /* Fixed height */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for images */
+}
+
+/* Navigation styles */
+nav {
+  padding: 1rem; /* Padding for nav */
+}
+
+nav details {
+  background-color: #fff; /* White background for details */
+  padding: 0.5rem; /* Padding for details */
+  border-radius: 8px; /* Rounded corners for details */
+}
+
+nav summary {
+  font-weight: bold; /* Bold text for summary */
+  cursor: pointer; /* Pointer cursor for clickable summary */
+}
+
+/* Table styles */
+table {
+  width: 100%; /* Full width for tables */
+  border-collapse: collapse; /* Collapse table borders */
+  margin-top: 1rem; /* Margin above the table */
+}
+
+tbody tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.05); /* Light background for odd rows */
+}
+
+tbody tr {
+  border-bottom: 1px solid #ddd; /* Border between rows */
+}
+
+td,
+th {
+  padding: 0.5rem; /* Padding for cells */
+  text-align: left; /* Left-align text in cells */
+  font-size: 0.9rem; /* Font size for cells */
+}
+
+/* Instagram Button styles */
+.fab {
+  bottom: 1rem; /* Space from the bottom */
+  right: 1rem; /* Space from the right */
+  background-color: var(--highlight-color); /* Background color */
+  color: #fff; /* Text color */
+  border: none; /* No border */
+  border-radius: 50%; /* Circular button */
+  width: 50px; /* Fixed width */
+  height: 50px; /* Fixed height */
+  font-size: 1.5rem; /* Font size */
+  text-align: center; /* Center text */
+  line-height: 50px; /* Center text vertically */
+  cursor: pointer; /* Pointer cursor for button */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for button */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+.fab:hover {
+  background-color: #005fa3; /* Darker shade on hover */
+}
+
+/* Gallery styles */
+#gallery {
+  display: flex; /* Flexbox layout */
+  flex-wrap: wrap; /* Wrap items to next line */
+  gap: 10px; /* Space between items */
+  justify-content: center; /* Center items */
+  padding: 1rem; /* Padding around the gallery */
+}
+
+#gallery img {
+  width: 80px; /* Fixed width for gallery images */
+  height: 80px; /* Fixed height for gallery images */
+  object-fit: cover; /* Cover the image without distortion */
+  border-radius: 8px; /* Rounded corners for images */
+  transition: transform 0.2s ease; /* Smooth scale transition on hover */
+}
+
+#gallery img:hover {
+  transform: scale(1.1); /* Scale image on hover */
+}
+
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none; /* Disable transitions for users who prefer reduced motion */
+  }
+
+  #gallery img {
+    transition: none; /* Disable image transitions in gallery */
+  }
+}
+
+/* Apply focus style */
+:focus {
+  outline: none; /* Remove default outline */
+  border: 2px solid #ff9900; /* High-contrast outline for focused elements */
+  border-radius: 3px; /* Slightly round the border */
+}
+
+/* Skip link styles */
+.skip {
+  position: absolute; /* Position the skip link */
+  top: -50px; /* Move it off-screen */
+  left: 0; /* Align to the left */
+  background-color: #fff; /* Background color */
+  color: #000; /* Text color */
+  padding: 8px; /* Padding */
+  z-index: 1000; /* Ensure it appears above other content */
+  transition: top 0.2s; /* Smooth transition for focus */
+}
+
+/* Show the skip link when focused */
+.skip:focus {
+  top: 0; /* Move it back into view */
+  left: 40%; /* Center it horizontally */
+}
