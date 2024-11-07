@@ -85,7 +85,7 @@ def gen_athlete_page(data, outfile):
     <div class="header-main-wrapper">
     <header>
         <h1>{data["name"]}</h1>
-        <img src="../images/{athlete_image_path}.jpg" id="profileImage" class="profile-image" alt="Athlete headshot" width="200">
+        <img src="../images/{athlete_image_path}.jpg" id="profileImage" class="profile-image" alt="Athlete headshot" onerror="this.onerror=null; this.src='../images/defaultImage.jpg'">
     </header>
     <main id="main">
         <section id="athlete-sr-table">
@@ -161,8 +161,8 @@ def gen_athlete_page(data, outfile):
             <a href="https://www.instagram.com/a2skylinexc/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
                 Follow us on Instagram <i class="fab fa-instagram" aria-hidden="true"></i>
             </a>
-        </address>
         </p>
+        </address>
     </footer>
     <script src="../js/script.js"></script>
 </body>
