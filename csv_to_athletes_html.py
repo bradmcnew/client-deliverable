@@ -62,11 +62,6 @@ def process_athlete_data(file_path):
 def gen_athlete_page(data, outfile):
     athlete_image_path = f"profiles/{data['athlete_id']}"
 
-    athlete_image_full_path = f"./images/{athlete_image_path}.jpg"
-
-    if not os.path.isfile(athlete_image_full_path):
-        athlete_image_path = "default_image"  # Path to your default image
-
     # Start building the HTML structure
     html_content = f'''<!DOCTYPE html>
 <html lang="en">
