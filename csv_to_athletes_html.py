@@ -80,7 +80,7 @@ def gen_athlete_page(data, outfile):
     <div class="header-main-wrapper">
     <header>
         <h1>{data["name"]}</h1>
-        <img src="../images/{athlete_image_path}.jpg" id="profileImage" class="profile-image" alt="Athlete headshot" onerror="this.onerror=null; this.src='../images/defaultImage.jpg'">
+        <img src="../images/{athlete_image_path}.jpg" id="profileImage" class="profile-image" alt="Athlete headshot" onerror="this.onerror=null; this.src='../images/profiles/defaultImage.jpg'">
     </header>
     <main id="main">
         <section id="athlete-sr-table">
