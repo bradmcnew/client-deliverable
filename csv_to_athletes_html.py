@@ -16,7 +16,7 @@ def generate_nav_html(directory):
             links.append(link)
 
     links_html = "<br>\n".join(links)
-    nav_html = f"<nav><details><summary>Men's Roster</summary>\n{links_html}\n</details></nav>"
+    nav_html = f'<nav class="roster-nav"><details id="roster"><summary>Men\'s Roster</summary>\n{links_html}\n</details></nav>'
 
     return nav_html
 
@@ -80,10 +80,12 @@ def gen_athlete_page(data, outfile):
 </head>
 <body>
     <a href="#main" class="skip">Skip to Main Content</a>
+    <div class="content-wrapper">
     {nav_html_content}
+    <div class="header-main-wrapper">
     <header>
         <h1>{data["name"]}</h1>
-        <img src="../images/{athlete_image_path}.jpg" alt="Athlete headshot" width="200">
+        <img src="../images/{athlete_image_path}.jpg" id="profileImage" class="profile-image" alt="Athlete headshot" width="200">
     </header>
     <main id="main">
         <section id="athlete-sr-table">
@@ -114,7 +116,7 @@ def gen_athlete_page(data, outfile):
         </section>
 
         <h2>Race Results</h2>
-        <details>
+        <details id="race-results">
             <summary>Click to expand Race Results</summary>
             <section id="athlete-result-table">
                 <table id="athlete-table">
@@ -148,9 +150,11 @@ def gen_athlete_page(data, outfile):
         </details>
     </main>
     <br><br>
+    </div>
+    </div>
     <footer>
-        <p>Skyline High School<br>
         <address>
+        <p>Skyline High School<br>
             2552 North Maple Road<br>
             Ann Arbor, MI 48103<br><br>
             <a href="https://sites.google.com/aaps.k12.mi.us/skylinecrosscountry2021/home">XC Skyline Page</a><br>
@@ -160,6 +164,7 @@ def gen_athlete_page(data, outfile):
         </address>
         </p>
     </footer>
+    <script src="../js/script.js"></script>
 </body>
 </html>
 '''

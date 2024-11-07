@@ -8,6 +8,7 @@
 
 /* Body styles */
 body {
+  min-width: 320px; /* Minimum width for the body */
   max-width: 400px; /* Maximum width for the body */
   margin: 0 auto; /* Center the body */
   font-family: Arial, sans-serif; /* Set default font */
@@ -87,17 +88,20 @@ thead th {
 }
 
 /* Profile Image styles */
-img {
+.profile-image {
   border-radius: 50%; /* Make images circular */
   object-fit: cover; /* Cover the image without distortion */
   width: 100px; /* Fixed width */
   height: 100px; /* Fixed height */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for images */
-  transition: transform 0.3s ease; /* Smooth transform on tap */
+  transition: transform 0.3s ease, top 0.3s ease; /* Smooth transform on tap */
 }
 
-img:active {
-  transform: scale(3); /* Scale down on tap */
+.profile-image.enlarged {
+  transform: scale(3); /* Scale the image */
+  position: relative; /* Position relative */
+  top: 100px; /* Move the image */
+  z-index: 99999; /* Bring image to the front */
 }
 
 /* Navigation styles */
@@ -160,16 +164,6 @@ th {
   background-color: #005fa3; /* Darker shade on hover */
 }
 
-/* Accessibility: prefers-reduced-motion */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none; /* Disable transitions for users who prefer reduced motion */
-  }
-  .fab:hover {
-    background-color: var(--highlight-color); /* Keep the button color static */
-  }
-}
-
 /* Apply focus style */
 :focus {
   outline: none; /* Remove default outline */
@@ -193,4 +187,83 @@ th {
 .skip:focus {
   top: 0; /* Move it back into view */
   left: 40%; /* move it to center horizontally */
+}
+
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none; /* Disable transitions for users who prefer reduced motion */
+  }
+  .fab:hover {
+    background-color: var(--highlight-color); /* Keep the button color static */
+  }
+}
+
+/* Media query for minimum width */
+@media (min-width: 700px) {
+  body {
+    max-width: 75%; /* Increase max-width for larger screens */
+  }
+
+  header h1 {
+    font-size: 2.4rem; /* Increase font size for main title */
+  }
+
+  .profile-image {
+    z-index: -99999;
+    width: 150px; /* Increase image size */
+    height: 150px; /* Increase image size */
+  }
+
+  address p {
+    display: flex; /* Flex layout for footer */
+    justify-content: space-around; /* Space between items */
+    align-items: center; /* Center items vertically */
+  }
+}
+
+@media (min-width: 1000px) {
+  body {
+    max-width: 800px; /* Increase max-width for larger screens */
+  }
+
+  .content-wrapper {
+    display: flex; /* Flex layout for content */
+    flex-direction: row; /* Change flex direction to row */
+    justify-content: space-between; /* Space between items */
+  }
+
+  .roster-nav {
+    width: 80%; /* Set width for navigation */
+    order: 0; /* Change order to 1 */
+  }
+
+  .main-content {
+    width: 70%; /* Set width for main content */
+    order: 2; /* Change order to 2 */
+  }
+
+  .content-wrapper {
+    margin: 0; /* Center the body */
+  }
+}
+
+@media (min-width: 1300px) {
+  nav {
+    width: 50%; /* Set width for navigation */
+  }
+  body {
+    margin: 0;
+    max-width: 100%; /* Increase width for larger screens */
+  }
+  .content-wrapper {
+    width: 90%; /* Set width for content */
+  }
+  .roster-nav {
+    max-width: 500px; /* Set width for navigation */
+  }
+  .header-main-wrapper {
+    width: 100%; /* Set width for main */
+    padding-left: 5%;
+  }
 }
